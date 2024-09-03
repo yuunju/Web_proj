@@ -1,14 +1,18 @@
-// src/App.js
 import React from "react";
-import { Desktop } from "./components/index";
-import "./components/style.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./components/login";
+// 회원가입 페이지 컴포넌트도 추가해야 합니다.
+import Join from "./components/join"; // Join 컴포넌트를 추가하세요.
 
-const App = () => {
+function App() {
   return (
-    <div className="app">
-      <Desktop />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/join" element={<Join />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
-export default App; // Ensure this line is present
+export default App;
