@@ -7,10 +7,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // 로그인 처리 로직을 여기에 추가
-    console.log("Logging in with:", username, password);
+  const handleLogin = () => {
+    navigate("/main");
   };
 
   const handleJoin = () => {

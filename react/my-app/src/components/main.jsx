@@ -4,7 +4,10 @@ import { Container, Row, Col, Accordion } from "react-bootstrap";
 import { Chart, registerables } from "chart.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import data from "./data.json";
-
+// 차트 모듈
+// npm i chart.js react-chartjs-2
+// 부트스트랩 모듈
+// npm install bootstrap react-bootstrap chart.
 Chart.register(...registerables);
 
 const MonitoringPage = () => {
