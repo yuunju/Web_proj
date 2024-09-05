@@ -162,6 +162,21 @@ function App() {
                 arcLinkLabelsColor={{ from: 'color' }}
                 arcLabelsSkipAngle={10}
                 arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
+                legends={[
+                  {
+                    anchor: 'bottom',
+                    direction: 'row',
+                    justify: false,
+                    translateX: 0,
+                    translateY: 56,
+                    itemsSpacing: 0,
+                    itemWidth: 100,
+                    itemHeight: 18,
+                    itemTextColor: '#999',
+                    symbolSize: 18,
+                    symbolShape: 'circle',
+                  },
+                ]}
               />
             ) : (
               <p>데이터를 불러오는 중입니다...</p>
@@ -189,6 +204,21 @@ function App() {
                 arcLinkLabelsColor={{ from: 'color' }}
                 arcLabelsSkipAngle={10}
                 arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
+                legends={[
+                  {
+                    anchor: 'bottom',
+                    direction: 'row',
+                    justify: false,
+                    translateX: 0,
+                    translateY: 56,
+                    itemsSpacing: 0,
+                    itemWidth: 100,
+                    itemHeight: 18,
+                    itemTextColor: '#999',
+                    symbolSize: 18,
+                    symbolShape: 'circle',
+                  },
+                ]}
               />
             ) : (
               <p>데이터를 불러오는 중입니다...</p>
@@ -216,6 +246,21 @@ function App() {
                 arcLinkLabelsColor={{ from: 'color' }}
                 arcLabelsSkipAngle={10}
                 arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
+                legends={[
+                  {
+                    anchor: 'bottom',
+                    direction: 'row',
+                    justify: false,
+                    translateX: 0,
+                    translateY: 56,
+                    itemsSpacing: 0,
+                    itemWidth: 100,
+                    itemHeight: 18,
+                    itemTextColor: '#999',
+                    symbolSize: 18,
+                    symbolShape: 'circle',
+                  },
+                ]}
               />
             ) : (
               <p>데이터를 불러오는 중입니다...</p>
@@ -243,6 +288,21 @@ function App() {
                 arcLinkLabelsColor={{ from: 'color' }}
                 arcLabelsSkipAngle={10}
                 arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
+                legends={[
+                  {
+                    anchor: 'bottom',
+                    direction: 'row',
+                    justify: false,
+                    translateX: 0,
+                    translateY: 56,
+                    itemsSpacing: 0,
+                    itemWidth: 100,
+                    itemHeight: 18,
+                    itemTextColor: '#999',
+                    symbolSize: 18,
+                    symbolShape: 'circle',
+                  },
+                ]}
               />
             ) : (
               <p>데이터를 불러오는 중입니다...</p>
@@ -251,7 +311,7 @@ function App() {
         );
       case 'urgencyImportance':
         return (
-          <ChartCard>
+          <ChartCard style={{ justifyContent: 'center' }}>
             <MainTitleText></MainTitleText>
             <ResponsiveBar
               data={[
@@ -283,6 +343,30 @@ function App() {
               labelSkipWidth={12}
               labelSkipHeight={12}
               labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+              legends={[
+                {
+                  dataFrom: 'keys',
+                  anchor: 'top-right',
+                  direction: 'column',
+                  justify: false,
+                  translateX: 120,
+                  translateY: 0,
+                  itemsSpacing: 2,
+                  itemWidth: 100,
+                  itemHeight: 20,
+                  itemDirection: 'left-to-right',
+                  itemOpacity: 0.85,
+                  symbolSize: 20,
+                  effects: [
+                    {
+                      on: 'hover',
+                      style: {
+                        itemOpacity: 1,
+                      },
+                    },
+                  ],
+                },
+              ]}
             />
           </ChartCard>
         );
