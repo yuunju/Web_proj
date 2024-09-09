@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./style1.css" />
+    <link rel="stylesheet" href="./messenger.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <a href="./dashboard.html"><img src="./img/logo.png" id="logo" /></a>
+        <div class="container" id="head1">
+          <a href=""><div class="box" id="head1_1">설계</div></a>
+          <a href=""><div class="box" id="head1_2">생산</div></a>
+        </div>
+        <div class="container" id="head2">
+          <a href=""><div class="box" id="head2_1">gkain0125</div></a>
+          <a href=""
+            ><div class="icon">
+              <img src="./img/icon.png" id="tiniping" alt="" /></div
+          ></a>
+          <img
+            src="https://cdn.prod.website-files.com/611a19b9853b7414a0f6b3f6/6138cce6788a91c4dca7816f_chevron-down.svg"
+            loading="lazy"
+            alt="down arrow"
+            class="c-nav-arrow-dropdown"
+            id="dropdownArrow"
+          />
+        </div>
+      </div>
+
+      <!-- messenger -->
+      <div class="messenger-container collapsed" id="messenger">
+        <!-- 메신저 헤더 -->
+        <div class="messenger-header" id="toggleBtn">
+          <span>Messenger</span>
+          <span id="arrow">▼</span>
+        </div>
+
+        <!-- 메신저 본문 -->
+        <div class="messenger-body" id="messengerBody">
+          <div id="chatbox"></div>
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="Type a message..."
+          />
+          <button id="sendBtn">Send</button>
+        </div>
+
+        <!-- messenger -->
+      </div>
+    </main>
+    <script src="./scripts/messenger.js"></script>
+  </body>
+</html>

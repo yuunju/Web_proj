@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- JS Link -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript" src="scripts/line-chart.js"></script>
+    <!-- link -->
+
+    <title>공정현황 대시보드</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <a href="./dashboard.html"><img src="./img/logo.png" id="logo" /></a>
+      <div class="container" id="head1">
+        <a href=""><div class="box" id="head1_1">설계</div></a>
+        <a href=""><div class="box" id="head1_2">생산</div></a>
+      </div>
+      <a href=""><div class="box" id="head2">로그아웃</div></a>
+    </div>
+
+    <!-- main content -->
+    <main>
+      <div class="container" id="container1">
+        <div class="box" id="box1">
+          <div id="box1_1">
+            <div id="box1_1_1">공정률</div>
+            <div id="box1_1_2">
+              <div id="box1_1_2_1">
+                <div>계획 공정률</div>
+                <div id="box1_1_2_1_1"><span id="rate1">10.4</span>%</div>
+              </div>
+              <div id="box1_1_2_2">
+                <div>실제 공정률</div>
+                <div id="box1_1_2_2_1"><span id="rate2">10.1</span>%</div>
+              </div>
+            </div>
+            <div id="box1_1_3">
+              <div id="box1_1_3_1">
+                <span id="rate3_1">차이</span>
+                <span>
+                  <span id="rate3">0.3</span>
+                  <span>%</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div id="box1_2">
+            <div id="line_chart"></div>
+          </div>
+        </div>
+
+        <div class="box" id="box2">
+          <div class="box">
+            <h4>calendar</h4>
+            <ul>
+              <li>P1: <span>2</span></li>
+              <li>P2: <span>1</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="container2">
+        <div class="container" id="container3">
+          <div class="box">
+            <div class="box" id="box3">
+              <div>현장 상황</div>
+              <div id="box3_1"></div>
+            </div>
+          </div>
+          <div class="box"></div>
+        </div>
+        <div class="container" id="container4">
+          <div class="container" id="container4_1">
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+          <div class="box" id="box_yard">
+            <img src="./img/yard1.PNG" alt="yard" id="img1" />
+          </div>
+        </div>
+        <div class="container" id="container5">
+          <div class="box">
+            <div class="box">
+              <h4>message</h4>
+              <ul>
+                <li>P1: <span>2</span></li>
+                <li>P2: <span>1</span></li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>message</h4>
+              <ul>
+                <li>P1: <span>2</span></li>
+                <li>P2: <span>1</span></li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>message</h4>
+              <ul>
+                <li>P1: <span>2</span></li>
+                <li>P2: <span>1</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- linchart -->
+  </body>
+</html>

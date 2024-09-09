@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collapsible Web Messenger</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 메신저 상자 스타일 */
+      .messenger-container {
+        position: fixed;
+        bottom: 0;
+        right: 20px;
+        width: 300px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .messenger-container {
+        transition: height 0.3s ease;
+      }
+
+      /* 접힌 상태 */
+      .collapsed {
+        height: 40px;
+      }
+
+      /* 펼친 상태 */
+      .expanded {
+        height: 400px;
+      }
+
+      .messenger-header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .messenger-body {
+        background-color: white;
+        display: none;
+        flex-direction: column;
+        height: calc(100% - 40px);
+        overflow: hidden;
+      }
+
+      #chatbox {
+        flex-grow: 1;
+        padding: 10px;
+        overflow-y: auto;
+        border-top: 1px solid #ccc;
+      }
+
+      #messageInput {
+        width: calc(100% - 22px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      #sendBtn {
+        padding: 10px;
+        width: 100%;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 메신저 컨테이너 -->
+    <div class="messenger-container collapsed" id="messenger">
+      <!-- 메신저 헤더 -->
+      <div class="messenger-header" id="toggleBtn">
+        <span>Messenger</span>
+        <span id="arrow">▼</span>
+      </div>
+
+      <!-- 메신저 본문 -->
+      <div class="messenger-body" id="messengerBody">
+        <div id="chatbox"></div>
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+
+    <script>
+      const toggleBtn = document.getElementById("toggleBtn");
+      const messenger = document.getElementById("messenger");
+      const messengerBody = document.getElementById("messengerBody");
+      const arrow = document.getElementById("arrow");
+
+      // 접기/펼치기 기능
+      toggleBtn.addEventListener("click", () => {
+        if (messenger.classList.contains("collapsed")) {
+          messenger.classList.remove("collapsed");
+          messenger.classList.add("expanded");
+          messengerBody.style.display = "flex";
+          arrow.textContent = "▲"; // 화살표 변경
+        } else {
+          messenger.classList.remove("expanded");
+          messenger.classList.add("collapsed");
+          messengerBody.style.display = "none";
+          arrow.textContent = "▼"; // 화살표 변경
+        }
+      });
+
+      // WebSocket 기능 (기본 예제)
+      const ws = new WebSocket("ws://localhost:8080");
+      const chatbox = document.getElementById("chatbox");
+      const sendBtn = document.getElementById("sendBtn");
+      const messageInput = document.getElementById("messageInput");
+
+      ws.onmessage = (event) => {
+        const message = document.createElement("div");
+        message.textContent = event.data;
+        chatbox.appendChild(message);
+        chatbox.scrollTop = chatbox.scrollHeight; // 자동 스크롤
+      };
+
+      sendBtn.addEventListener("click", () => {
+        const message = messageInput.value;
+        ws.send(message);
+        messageInput.value = "";
+      });
+    </script>
+  </body>
+</html>
