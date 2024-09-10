@@ -146,7 +146,7 @@ function createChart(canvasId, data, type) {
         data: data,
         options: {
             responsive: true,
-            maintainAspectRatio: false,
+            maintainAspectRatio: true, // 비율 유지
             plugins: {
                 legend: {
                     position: 'top',

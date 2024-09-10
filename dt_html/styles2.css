@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.header {
+    background-color: #343a40;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.sidebar {
+    background-color: #f4f4f4;
+    width: 200px;
+    padding: 1rem;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 220px;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+#chart-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3개의 차트가 한 줄에 표시되도록 설정 */
+    gap: 30px; /* 차트 간의 간격을 더 넓게 설정 */
+    justify-items: center; /* 차트를 가운데 정렬 */
+    align-items: start; /* 상단 정렬로 맞춤 */
+}
+
+.chart-wrapper {
+    width: 100%;
+    max-width: 350px; /* 모든 차트의 최대 너비를 동일하게 설정 */
+    aspect-ratio: 1; /* 1:1 비율을 유지하여 모든 차트 크기 통일 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 20px; /* 내부 여백 추가 */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-wrapper canvas {
+    width: 100%;
+    height: 100%;
+}
