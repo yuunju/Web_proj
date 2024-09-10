@@ -45,3 +45,21 @@ sendBtn.addEventListener("click", () => {
   ws.send(message);
   messageInput.value = "";
 });
+
+// 페이지가 새로고침되지 않도록 하고, 선택한 값을 저장
+document
+  .getElementById("languageForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // 새로고침 방지
+
+    const selectedValue = document.getElementById("lang").value; // 선택한 값 가져오기
+    localStorage.setItem("selectedLanguage", selectedValue); // 선택한 값을 localStorage에 저장
+  });
+
+// 페이지가 로드될 때, 저장된 값을 불러와서 선택된 상태로 유지
+window.onload = function () {
+  const savedValue = localStorage.getItem("selectedLanguage"); // 저장된 값 가져오기
+  if (savedValue) {
+    document.getElementById("lang").value = savedValue; // 그 값으로 셀렉트 박스 선택 상태 유지
+  }
+};
